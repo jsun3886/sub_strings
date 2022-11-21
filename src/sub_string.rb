@@ -1,11 +1,11 @@
 def sub_string(phrase, dictionary)
-    puts "this is inside substring"
     result = Hash.new
+    phrase_words= phrase.split(" ")
     dictionary.each do |word|
         
-        if result.has_key?(word) and word == phrase
+        if result.has_key?(word) and phrase_words.include?(word)
             result[word]+=1
-        elsif word==phrase
+        elsif phrase_words.include?(word)
             result[word]=1
         end
 
@@ -19,4 +19,5 @@ end
 puts "running"
 dictionary = ["below","down","go","going","horn","how","howdy","it","i","low","own","part","partner","sit"]
 puts sub_string("below", dictionary)
+puts sub_string("hey hows it going down there", dictionary)
 
