@@ -1,11 +1,11 @@
 def sub_string(phrase, dictionary)
     result = Hash.new
     phrase_words= phrase.split(" ")
-    dictionary.each do |word|
+    phrase_words.each do |word|
         
-        if result.has_key?(word) and phrase_words.include?(word)
+        if result.has_key?(word) and dictionary.include?(word)
             result[word]+=1
-        elsif phrase_words.include?(word)
+        elsif dictionary.include?(word)
             result[word]=1
         end
 
